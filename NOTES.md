@@ -2,9 +2,9 @@
 ```
 # git config --global user.email "lspiehler@gmail.com"
 # git config --global user.name "Lyas Spiehler"
-# source ~/venv/azure/bin/activate
-# export ANSIBLE_CONFIG=$(pwd)/ansible.cfg
-# . .env
+source ~/venv/azure/bin/activate
+export ANSIBLE_CONFIG=$(pwd)/ansible.cfg
+. .env
 ```
 
 ## List Static Inventory
