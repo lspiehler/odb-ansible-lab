@@ -2,8 +2,8 @@ all:
   hosts:
     ODBTST:
       host_var: host_value
-      # ansible_host: 10.40.44.4
-      # ansible_user: azureuser
+      ansible_user: azureuser
+      ansible_host: 10.40.44.4
   vars:
     global_var: global_value
   children:
