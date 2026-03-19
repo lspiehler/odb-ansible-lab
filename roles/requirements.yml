@@ -1,0 +1,38 @@
+---
+roles:
+  # required by aws-linux-storage
+  - name: linux-system-roles.storage
+  - name: aws_linux_storage
+    src: https://github.com/Sapphire-Health/ansible-role-aws-linux-storage.git
+  - name: azure_linux_storage
+    src: https://github.com/Sapphire-Health/ansible-role-azure-linux-storage.git
+  - name: aws_windows_storage
+    src: https://github.com/Sapphire-Health/ansible-role-aws-windows-storage.git
+  - name: azure_windows_storage
+    src: https://github.com/Sapphire-Health/ansible-role-azure-windows-storage.git
+  - name: microsoft_sql
+    src: https://github.com/Sapphire-Health/ansible-role-microsoft-sql.git
+  - name: kuiper
+    src: https://github.com/Sapphire-Health/ansible-role-kuiper.git
+  - name: system_pulse
+    src: https://github.com/Sapphire-Health/ansible-role-system-pulse.git
+  - name: smtp
+    src: https://github.com/Sapphire-Health/ansible-role-smtp.git
+  - name: certificate_authority
+    src: https://github.com/Sapphire-Health/ansible-role-certificate-authority.git
+  - name: windows_exporter
+    src: https://github.com/Sapphire-Health/ansible-role-windows-exporter.git
+  - name: linux_exporter
+    src: https://github.com/Sapphire-Health/ansible-role-linux-exporter.git
+  - name: iris
+    src: https://github.com/Sapphire-Health/ansible-role-iris.git
+  - name: domain_join
+    src: https://github.com/Sapphire-Health/ansible-role-domain-join.git
+  - name: subscription_manager
+    src: https://github.com/Sapphire-Health/ansible-role-subscription-manager.git
+  - name: cogito
+    src: https://github.com/Sapphire-Health/ansible-role-cogito.git
+  - name: ssh_ca
+    src: https://github.com/Sapphire-Health/ansible-role-ssh-ca.git
+  - name: qmanager
+    src: https://github.com/Sapphire-Health/ansible-role-qmanager.git
