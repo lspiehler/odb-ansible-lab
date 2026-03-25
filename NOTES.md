@@ -17,7 +17,17 @@ ansible-inventory --list --yaml
 ansible -m ping all
 ```
 
-## Run Show Vars Playbook
+## Run Ansible variables Playbook
 ```
-ansible-playbook show-vars.yml
+ansible-playbook ansible-vars.yml
+```
+
+## Read file content using ad-hoc ansible command
+```
+ansible -m ansible.builtin.command -a "cat /tmp/ip.txt" all
+```
+
+## Run public IP Playbook
+```
+ansible-playbook public-ip.yml
 ```
