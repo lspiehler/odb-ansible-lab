@@ -9,7 +9,7 @@ export ANSIBLE_CONFIG=$(pwd)/ansible.cfg
 
 ## List Static Inventory
 ```
-ansible-inventory --list --yaml
+ansible-inventory --list --yaml | more
 ```
 
 ## Ping Linux Host
