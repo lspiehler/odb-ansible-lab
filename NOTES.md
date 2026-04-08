@@ -14,7 +14,12 @@ ansible-inventory --list --yaml | more
 
 ## Ping Linux Host
 ```
-ansible -m ping all
+ansible -m ping all --limit azure_rm_linux
+```
+
+## Ping Windows Hosts
+```
+ansible -m win_ping all --limit azure_rm_windows
 ```
 
 ## Run Ansible variables Playbook
@@ -25,6 +30,12 @@ ansible-playbook ansible-vars.yml
 ## Read file content using ad-hoc ansible command
 ```
 ansible -m ansible.builtin.command -a "cat /tmp/ip.txt" all
+```
+
+## Run Example Playbooks
+```
+ansible-playbook --limit azure_rm_linux example.yml
+ansible-playbook --limit azure_rm_linux example-loop.yml
 ```
 
 ## Run public IP Playbook

@@ -1,0 +1,26 @@
+- name: Example Playbook
+  hosts: all
+  vars:
+    dir:
+      - /tmp/example1
+      # - /tmp/example2
+      # - /tmp/example3
+  tasks:
+    - name: Check if directory exists
+      ansible.builtin.stat:
+        path: "{{ item }}"
+      register: dir_stat
+      loop: "{{ dir }}"
+
+    - name: Show directory status
+      ansible.builtin.debug:
+        msg: "{{ item }}"
+      loop: "{{ dir_stat.results }}"
+
+    - name: Create directory if it does not exist
+      ansible.builtin.file:
+        path: "{{ item.item }}"
+        state: directory
+        mode: '0755'
+      loop: "{{ dir_stat.results }}"
+      # when: not item.stat.exists
