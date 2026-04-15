@@ -39,6 +39,5 @@ ansible-playbook --limit ODBTST public-ip.yml
 
 ## Run Example Playbooks
 ```
-ansible-playbook --limit azure_rm_linux example.yml
 ansible-playbook --limit azure_rm_linux example-loop.yml
 ```
