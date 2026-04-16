@@ -1,21 +1,16 @@
 - name: Example Playbook
   hosts: all
-  # vars:
-    # dir: /tmp/example1
-    # dir:
-    #   - /tmp/example1
-    #   - /tmp/example2
-    #   - /tmp/example3
   tasks:
-    - name: Create directory if it does not exist
-      ansible.builtin.file:
-        # path: "{{ item }}"
-        path: /tmp/example1
-        state: directory
-        mode: '0755'
-      # loop: "{{ dir }}"
-      # when: ansible_os_family == "Ubuntu"
+    - name: Group of tasks
+      when: ansible_os_family == "RedHat"
+      block:
+        - name: Create directory if it does not exist
+          ansible.builtin.file:
+            path: "{{ item }}"
+            state: directory
+            mode: '0755'
+          loop: "{{ dir }}"
 
-    # - name: Get OS family
-    #   ansible.builtin.debug:
-    #     msg: "OS Family: {{ ansible_os_family }}"
+        - name: Get OS family
+          ansible.builtin.debug:
+            msg: "OS Family: {{ ansible_os_family }}"

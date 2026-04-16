@@ -1,0 +1,13 @@
+- name: Group of tasks
+  when: ansible_os_family == "RedHat"
+  block:
+    - name: Create directory if it does not exist
+      ansible.builtin.file:
+        path: "{{ item }}"
+        state: directory
+        mode: '0755'
+      loop: "{{ dir }}"
+
+    - name: Get OS family
+      ansible.builtin.debug:
+        msg: "OS Family: {{ ansible_os_family }}"
