@@ -1,5 +1,5 @@
 Operating system: {{ ansible_os_family }}
-Directiries to create:
-{% for item in dir %}
+Directories to create:
+{% for item in test_dirs %}
 {{ item }}
 {% endfor %}

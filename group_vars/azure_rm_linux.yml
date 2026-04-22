@@ -1,5 +1,5 @@
 ansible_user: azureuser
-dir:
-  - /tmp/example1
-  - /tmp/example2
-  - /tmp/example3
+test_dirs:
+  - /tmp/example7
+  - /tmp/example8
+  - /tmp/example9

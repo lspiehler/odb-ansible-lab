@@ -7,5 +7,5 @@
         path: "{{ item }}"
         state: directory
         mode: '0755'
-      loop: "{{ dir }}"
-      notify: "{{ handler_name }}"
+      loop: "{{ test_dirs }}"
+      notify: "{{ test_handler_name }}"

@@ -1,4 +1,4 @@
-dir:
+test_dirs:
   - /tmp/example4
   - /tmp/example5
   - /tmp/example6

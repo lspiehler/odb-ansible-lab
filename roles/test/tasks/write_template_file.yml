@@ -7,4 +7,4 @@
         src: example.j2
         mode: '0644'
         dest: /tmp/example.txt
-      notify: "{{ handler_name }}"
+      notify: "{{ test_handler_name }}"
