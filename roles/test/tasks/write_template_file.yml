@@ -1,0 +1,10 @@
+- name: Add tags to all tasks
+  tags:
+    - always
+  block:
+    - name: Write template file
+      ansible.builtin.template:
+        src: example.j2
+        mode: '0644'
+        dest: /tmp/example.txt
+      notify: "{{ handler_name }}"

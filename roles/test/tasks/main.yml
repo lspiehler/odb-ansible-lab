@@ -7,7 +7,25 @@
         state: directory
         mode: '0755'
       loop: "{{ dir }}"
+      # notify: Restart Syslog
+      # notify: "{{ handler_name }}"
 
-    - name: Get OS family
-      ansible.builtin.debug:
-        msg: "OS Family: {{ ansible_os_family }}"
+    - name: Write template file
+      ansible.builtin.template:
+        src: example.j2
+        mode: '0644'
+        dest: /tmp/example.txt
+      # notify: Restart Syslog
+      # notify: "{{ handler_name }}"
+
+    # - name: Create directory if it does not exist
+    #   ansible.builtin.include_tasks:
+    #     file: create_directories.yml
+    #   tags:
+    #     - dirs
+
+    # - name: Write template file
+    #   ansible.builtin.include_tasks:
+    #     file: write_template_file.yml
+    #   tags:
+    #     - files

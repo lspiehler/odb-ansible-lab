@@ -1,0 +1,11 @@
+- name: Add tags to all tasks
+  tags:
+    - always
+  block:
+    - name: Create directory if it does not exist
+      ansible.builtin.file:
+        path: "{{ item }}"
+        state: directory
+        mode: '0755'
+      loop: "{{ dir }}"
+      notify: "{{ handler_name }}"

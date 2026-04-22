@@ -1,0 +1,5 @@
+test_default_dirs:
+  - /tmp/example1
+  - /tmp/example2
+  - /tmp/example3
+test_dirs: "{{ dirs | default(test_default_dirs) }}"
