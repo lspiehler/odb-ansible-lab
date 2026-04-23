@@ -2,29 +2,13 @@
   when: ansible_os_family == "RedHat"
   block:
     - name: Create directory if it does not exist
-      ansible.builtin.file:
-        path: "{{ item }}"
-        state: directory
-        mode: '0755'
-      loop: "{{ test_dirs }}"
-      notify: Restart Syslog
-      # notify: "{{ test_handler_name }}"
+      ansible.builtin.include_tasks:
+        file: create_directories.yml
+      tags:
+        - dirs
 
-    # - name: Write template file
-    #   ansible.builtin.template:
-    #     src: example.j2
-    #     mode: '0644'
-    #     dest: /tmp/example.txt
-    #   notify: "{{ test_handler_name }}"
-
-    # - name: Create directory if it does not exist
-    #   ansible.builtin.include_tasks:
-    #     file: create_directories.yml
-    #   tags:
-    #     - dirs
-
-    # - name: Write template file
-    #   ansible.builtin.include_tasks:
-    #     file: write_template_file.yml
-    #   tags:
-    #     - files
+    - name: Write template file
+      ansible.builtin.include_tasks:
+        file: write_template_file.yml
+      tags:
+        - files
